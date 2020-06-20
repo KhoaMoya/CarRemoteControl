@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".ui.ControlCarFragment">
+
+    <ImageView
+        android:id="@+id/img_stream"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/control_panel"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.khoa.carremotecontrol.ui.OverlayView
+        android:id="@+id/overlay_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/control_panel"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </com.khoa.carremotecontrol.ui.OverlayView>
+
+    <TextView
+        android:id="@+id/txt_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@color/colorWhite"
+        app:layout_constraintBottom_toTopOf="@id/control_panel"/>
+
+    <Button
+        android:id="@+id/toggle_stream"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Stream Video"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toTopOf="@id/control_panel"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/toggle_led"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LED"
+        app:layout_constraintBottom_toTopOf="@id/control_panel"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <LinearLayout
+        android:id="@+id/control_panel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorTransparent10"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="16dp">
+
+            <ImageButton
+                android:id="@+id/btn_cam_up"
+                android:layout_width="54dp"
+                android:layout_height="54dp"
+                android:src="@drawable/ic_polygon"
+                android:scaleType="fitCenter"
+                android:padding="12dp"
+                android:rotation="-90"
+                android:background="@drawable/bg_clickable_round_trans10"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/btn_cam_down"
+                android:layout_width="54dp"
+                android:layout_height="54dp"
+                android:src="@drawable/ic_polygon"
+                android:scaleType="fitCenter"
+                android:padding="12dp"
+                android:rotation="90"
+                android:background="@drawable/bg_clickable_round_trans10"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btn_cam_left" />
+
+            <ImageButton
+                android:id="@+id/btn_cam_left"
+                android:layout_width="54dp"
+                android:layout_height="54dp"
+                android:src="@drawable/ic_polygon"
+                android:scaleType="fitCenter"
+                android:padding="12dp"
+                android:rotation="-180"
+                android:background="@drawable/bg_clickable_round_trans10"
+                app:layout_constraintEnd_toStartOf="@id/btn_cam_up"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btn_cam_up" />
+
+            <ImageButton
+                android:id="@+id/btn_cam_right"
+                android:layout_width="54dp"
+                android:layout_height="54dp"
+                android:src="@drawable/ic_polygon"
+                android:scaleType="fitCenter"
+                android:padding="12dp"
+                android:background="@drawable/bg_clickable_round_trans10"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/btn_cam_up"
+                app:layout_constraintTop_toBottomOf="@id/btn_cam_up" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="16dp">
+
+            <ImageButton
+                android:id="@+id/btn_forward"
+                android:layout_width="54dp"
+                android:layout_height="54dp"
+                android:src="@drawable/ic_polygon"
+                android:scaleType="fitCenter"
+                android:padding="12dp"
+                android:rotation="-90"
+                android:background="@drawable/bg_clickable_round_trans10"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/btn_backward"
+                android:layout_width="54dp"
+                android:layout_height="54dp"
+                android:src="@drawable/ic_polygon"
+                android:scaleType="fitCenter"
+                android:padding="12dp"
+                android:rotation="90"
+                android:background="@drawable/bg_clickable_round_trans10"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btn_left" />
+
+            <ImageButton
+                android:id="@+id/btn_left"
+                android:layout_width="54dp"
+                android:layout_height="54dp"
+                android:src="@drawable/ic_polygon"
+                android:scaleType="fitCenter"
+                android:padding="12dp"
+                android:rotation="-180"
+                android:background="@drawable/bg_clickable_round_trans10"
+                app:layout_constraintEnd_toStartOf="@id/btn_forward"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btn_forward" />
+
+            <ImageButton
+                android:id="@+id/btn_right"
+                android:layout_width="54dp"
+                android:layout_height="54dp"
+                android:src="@drawable/ic_polygon"
+                android:scaleType="fitCenter"
+                android:padding="12dp"
+                android:background="@drawable/bg_clickable_round_trans10"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/btn_forward"
+                app:layout_constraintTop_toBottomOf="@id/btn_forward" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
